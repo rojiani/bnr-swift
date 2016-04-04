@@ -27,7 +27,9 @@ print(13.5)
 //print(volunteersSorted)
 
 // if closure is the last argument ("trailing closure syntax")
-// let volunteersSorted = volunteerCounts.sort { $0 < $1 }
+// let volunteersSorted = volunteerCounts.sort() { $0 < $1 }  // sort()
+// let volunteersSorted = volunteerCounts.sort { $0 < $1 }    // sort (also OK if only 1 parameter)
+
 
 // Using an "operator function":
 let volunteersSorted = volunteerCounts.sort(<)
@@ -103,3 +105,49 @@ var someOtherPopulation = 4061981
 let growBy10000 = makeGrowthTracker(forGrowth: 10000)
 someOtherPopulation += growBy10000()
 currentPopulation
+
+/* map(_:) */
+print()
+print(13.16, "(map)")
+let precinctPopulations = [1244, 2021, 2157]
+let projectPopulations = precinctPopulations.map {
+    (population: Int) -> Int in
+    return population * 2
+}
+print("projectPopulations:", projectPopulations)
+
+/* filter(_:) */
+let nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+let oddNums = nums.filter() { $0 % 2 == 1 }
+print(oddNums)
+
+print()
+print(13.17, "(filter)")
+let bigProjections = projectPopulations.filter({
+    (projection: Int) -> Bool in
+    return projection > 4000
+    // projection > 4000 also ok
+})
+let bigProjectionsSimpler = projectPopulations.filter( { $0 > 4000 } )
+print("bigProjections:", bigProjections)
+print("bigProjectionsSimpler:", bigProjectionsSimpler)
+
+/* reduce(_:combine:) */
+// https://en.wikipedia.org/wiki/Fold_(higher-order_function)
+// fold, also known variously as reduce, accumulate, aggregate, compress, or inject
+print()
+print(13.18, "reduce(_:combine:)")
+let totalProjection = projectPopulations.reduce(0, combine: {
+    (accumulatedProjection: Int, precinctProjection: Int) -> Int in
+    return accumulatedProjection + precinctProjection
+})
+print("totalProjection:", totalProjection)
+
+/* Gold Challenge */
+// using + as an operator function:
+let totalProjectionGold1 = projectPopulations.reduce(0, combine: { $0 + $1 })
+// let totalProjectionGold1 = projectPopulations.reduce(0) { $0 + $1 }    // with trailing closure syntax
+print(totalProjectionGold1)
+
+let totalProjectionGold2 = projectPopulations.reduce(0, combine:+)
+print(totalProjectionGold2)
