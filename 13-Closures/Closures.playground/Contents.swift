@@ -114,12 +114,13 @@ let projectPopulations = precinctPopulations.map {
     (population: Int) -> Int in
     return population * 2
 }
-print("projectPopulations:", projectPopulations)
 
 /* filter(_:) */
 let nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-let oddNums = nums.filter() { $0 % 2 == 1 }
-print(oddNums)
+let oddNums = nums.filter { $0 % 2 == 1 }  // 'trailing closure syntax'. 
+// nums.filter({ $0 % 2 == 1 }) also ok
+// nums.filter { $0 % 2 == 1 } also ok
+print("oddNums:", oddNums)
 
 print()
 print(13.17, "(filter)")
