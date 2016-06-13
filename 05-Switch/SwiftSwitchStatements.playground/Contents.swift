@@ -25,12 +25,13 @@ statusCode = 404
 errorString = "The request failed with the error:"
 
 switch statusCode {
+// Switch cases can have multiple values like this (could also put 506, it would work)
 case 100, 101:
     errorString += " Informational, 1xx."
     
 case 204:
     errorString += " Successful but no content, 204."
-    
+// or range of values
 case 300...307:
     errorString += " Redirection, 3xx."
     
@@ -69,9 +70,10 @@ case 500...505:
 case let unknownCode:
     errorString = "\(unknownCode) is not a known error code."
 
-// could use this instead of last case to get same result.
-// default:
-//     errorString = "\(statusCode) is not a known error code."
+// Can bind switch value(s) to local variable(s), like 'unknownCode' here
+// another example: https://appventure.me/2015/08/20/swift-pattern-matching-in-detail/#sec-3-3
+// switch (4, 5) {
+//     case let (x, y): print("\(x) \(y)")
 }
 
 print(errorString)
@@ -95,6 +97,7 @@ case 400...417:
 case 500...505:
     errorString += " Server error, \(statusCode)."
     
+    
 case let unknownCode:
     errorString = "\(unknownCode) is not a known error code."
     
@@ -105,10 +108,18 @@ case let unknownCode:
 
 print(errorString)
 
+
+/* where clauses - see 5.6 */
+
+
 /* Tuples */
+
+// Basic
 //let error = (statusCode, errorString)
 //error.0
 //error.1
+
+// Naming the tuple's elements
 let error = (code: statusCode, error: errorString)
 error.code
 error.error
