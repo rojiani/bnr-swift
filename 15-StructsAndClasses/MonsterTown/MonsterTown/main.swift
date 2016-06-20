@@ -8,8 +8,14 @@
 
 import Foundation
 
-/* Structs */
+/* Struct - Town */
 var myTown = Town()
 myTown.changePopulation(500)
 myTown.printTownDescription()
 
+/* Class - Monster */
+let fredTheZombie = Zombie()
+fredTheZombie.town = myTown
+fredTheZombie.terrorizeTown()
+fredTheZombie.town?.printTownDescription()
+fredTheZombie.changeName("Fred the Zombie", walksWithLimp: false)

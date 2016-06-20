@@ -9,9 +9,13 @@
 import Foundation
 
 struct Town {
+    
+    // Properties
     var population = 5422
     var numberOfStoplights = 4
     
+    
+    // Methods
     func printTownDescription() {
         print("Population: \(population);" +
               "\n" +

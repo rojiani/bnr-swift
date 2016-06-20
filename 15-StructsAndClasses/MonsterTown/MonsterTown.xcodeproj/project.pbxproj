@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		105B7D251D178E0A0049BAC2 /* Town.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105B7D241D178E0A0049BAC2 /* Town.swift */; };
+		105B7D271D1790020049BAC2 /* Monster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105B7D261D1790020049BAC2 /* Monster.swift */; };
+		105B7D291D17926A0049BAC2 /* Zombie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105B7D281D17926A0049BAC2 /* Zombie.swift */; };
 		10A5F96F1D0FBC8B00CE6C43 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A5F96E1D0FBC8B00CE6C43 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +27,8 @@
 
 /* Begin PBXFileReference section */
 		105B7D241D178E0A0049BAC2 /* Town.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Town.swift; sourceTree = "<group>"; };
+		105B7D261D1790020049BAC2 /* Monster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Monster.swift; sourceTree = "<group>"; };
+		105B7D281D17926A0049BAC2 /* Zombie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Zombie.swift; sourceTree = "<group>"; };
 		10A5F96B1D0FBC8B00CE6C43 /* MonsterTown */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MonsterTown; sourceTree = BUILT_PRODUCTS_DIR; };
 		10A5F96E1D0FBC8B00CE6C43 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,6 +65,8 @@
 			children = (
 				10A5F96E1D0FBC8B00CE6C43 /* main.swift */,
 				105B7D241D178E0A0049BAC2 /* Town.swift */,
+				105B7D261D1790020049BAC2 /* Monster.swift */,
+				105B7D281D17926A0049BAC2 /* Zombie.swift */,
 			);
 			path = MonsterTown;
 			sourceTree = "<group>";
@@ -123,6 +129,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				10A5F96F1D0FBC8B00CE6C43 /* main.swift in Sources */,
+				105B7D291D17926A0049BAC2 /* Zombie.swift in Sources */,
+				105B7D271D1790020049BAC2 /* Monster.swift in Sources */,
 				105B7D251D178E0A0049BAC2 /* Town.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
