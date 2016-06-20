@@ -11,6 +11,15 @@ import Foundation
 // Zombie is a Subclass of Monster
 class Zombie: Monster {
     
+    // Type Methods - Ch. 15 - For the More Curious
+    // For Value Types (structs, enums), use "static" keyword
+    // For classes, you use "class" keyword
+    // oddly, for type properties, you use "static" for both structs & classes
+    // See Ch. 16 for type properties
+    class func makeSpookyNoise() -> String {
+        return "Brains..."
+    }
+    
     // Properties
     var walksWithLimp = true
     

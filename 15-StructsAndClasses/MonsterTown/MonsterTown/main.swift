@@ -33,3 +33,6 @@ dracula.printVampireThralls()
 nosferatu.terrorizeTown()
 nosferatu.town?.printTownDescription()
 nosferatu.printVampireThralls()
+
+/* For the More Curious: Type Methods */
+print(Zombie.makeSpookyNoise())
