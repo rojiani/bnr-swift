@@ -10,32 +10,64 @@ import Foundation
 
 struct Town {
     
-    // Properties
-    var population = 5422
-    var numberOfStoplights = 4
+    /* Properties */
     
-    enum Size {
-        case Small
-        case Medium
-        case Large
+    // Stored properties
+    var population = 5422 {
+        didSet(oldPopulation) {
+            print("The population has changed to \(population) from \(oldPopulation).")
+        }
     }
     
+    var numberOfStoplights = 4
+    // could also have a constant (let) stored property
+    
+    enum Size {
+        case small
+        case medium
+        case large
+    }
+    
+    // lazy initialized stored property
     // IIFE - called when townSize is referenced
     // the () along with 'lazy' marking ensure that Swift will call the
     // closure & assign the result it returns to townSize when the property is acessed for 
     // the first time
-    lazy var townSize: Size = {
+    // A closure (& lazy) works well here since the value of the town's population is needed
+    // in order to determine the town's size
+    // Must be lazy - 'self' unresolved if not
+    lazy var lazyTownSize: Size = {
         switch self.population {
         case 0...10000:
-            return Size.Small
+            return Size.small
         
         case 10001...100000:
-            return Size.Medium
+            return Size.medium
         
         default:
-            return Size.Large
+            return Size.large
         }
     }()
+    
+    // Computed properties
+    // a read-only computed property (no setter)
+    // note: if no setter, can leave out get { ... }
+    var townSize: Size {
+        get {
+            switch self.population {
+                case 0...10000:
+                    return Size.small
+                
+                case 10001...100000:
+                    return Size.medium
+
+                default:
+                    return Size.large
+            }
+        }
+    }
+    
+    
     
     // Methods
     func printTownDescription() {
@@ -44,7 +76,7 @@ struct Town {
               "Number of Stoplights: \(numberOfStoplights)")
     }
     
-    mutating func changePopulation(amount: Int) {
+    mutating func changePopulation(_ amount: Int) {
         population += amount
     }
     

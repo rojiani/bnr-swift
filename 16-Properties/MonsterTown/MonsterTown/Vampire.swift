@@ -20,7 +20,7 @@ class Vampire : Monster {
         super.terrorizeTown()
     }
     
-    func changeName(name: String) {
+    func changeName(_ name: String) {
         self.name = name
     }
     

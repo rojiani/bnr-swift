@@ -34,7 +34,7 @@ class Zombie: Monster {
         super.terrorizeTown()
     }
     
-    func changeName(name: String, walksWithLimp: Bool) {
+    func changeName(_ name: String, walksWithLimp: Bool) {
         self.name = name
         self.walksWithLimp = walksWithLimp
     }

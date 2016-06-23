@@ -13,6 +13,17 @@ class Monster {
     // Properties
     var town: Town?
     var name = "Monster"
+    var victimPool: Int {
+        get {
+            return town?.population ?? 0
+        }
+        set(newVictimPool) {
+        // set {
+            // if no name provided, can use Swift default 'newValue'
+            town?.population = newVictimPool
+            // town?.population = newValue
+        }
+    }
     
     // Methods
     func terrorizeTown() {

@@ -10,8 +10,18 @@ import Foundation
 
 /* Struct - Town */
 var myTown = Town()
-myTown.changePopulation(500)
-myTown.printTownDescription()
+let ts = myTown.lazyTownSize
+print(ts)
+
+// computed properties (getter)
+let computedTownSize = myTown.townSize
+
+// lazy properties (townSize) are only calculated once.
+myTown.changePopulation(1000000)
+print("Size: \(myTown.lazyTownSize); population: \(myTown.population)")
+
+// computed property will reflect change
+print("Size: \(myTown.townSize); population: \(myTown.population)")
 
 /* Class - Monster */
 let fredTheZombie = Zombie()
@@ -36,3 +46,10 @@ nosferatu.printVampireThralls()
 
 /* For the More Curious: Type Methods */
 print(Zombie.makeSpookyNoise())
+
+print("Victim pool: \(fredTheZombie.victimPool)")
+fredTheZombie.victimPool = 500      // note the syntax: not fredTheZombie.victimPool(500)
+print("Victim pool: \(fredTheZombie.victimPool);\n" +
+       "population: \(fredTheZombie.town?.population)")
+// Note that setting victimPool doesn't change the Town's population
+print(myTown.population)
