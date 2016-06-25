@@ -22,14 +22,16 @@ class Zombie: Monster {
     
     // Properties
     var walksWithLimp = true
-    
+    // private var isFallingApart = false
+    // if property has both getter & setter, can change their visibility separately
+    // internal getter, private setter
+    internal private(set) var isFallingApart = false
+
     // Methods
     // override func terrorizeTown() {          // override superclass' terrorizeTown()
     final override func terrorizeTown() {       // final: prevent subclasses of Zombie from overriding
-        if (town?.population <= 10) {
-            town?.population = 0
-        } else {
-            town?.changePopulation(-10)     // see book note - optional binding & optional chaining
+        if !isFallingApart {
+            town?.changePopulation(-10)
         }
         super.terrorizeTown()
     }
