@@ -30,8 +30,11 @@ class Zombie: Monster {
     var walksWithLimp = true
     // private var isFallingApart = false
     // if property has both getter & setter, can change their visibility separately
-    // internal getter, private setter
-    internal private(set) var isFallingApart = false
+    // internal getter, private setter:
+    // internal private(set) var isFallingApart = false
+    // don't need to state internal, since it is the default. 
+    private(set) var isFallingApart = false
+    
 
     // Methods
     // override func terrorizeTown() {          // override superclass' terrorizeTown()
