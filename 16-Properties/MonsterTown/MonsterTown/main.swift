@@ -44,12 +44,22 @@ nosferatu.terrorizeTown()
 nosferatu.town?.printTownDescription()
 nosferatu.printVampireThralls()
 
-/* For the More Curious: Type Methods */
-print(Zombie.makeSpookyNoise())
+
+print(Zombie.spookyNoise)
+if Zombie.isTerrifying {
+    print("Run away!")
+}
 
 print("Victim pool: \(fredTheZombie.victimPool)")
 fredTheZombie.victimPool = 500      // note the syntax: not fredTheZombie.victimPool(500)
-print("Victim pool: \(fredTheZombie.victimPool);\n" +
-       "population: \(fredTheZombie.town?.population)")
+print("Victim pool: \(fredTheZombie.victimPool)")
 // Note that setting victimPool doesn't change the Town's population
 print(myTown.population)
+
+// Do subclasses inherit static properties? Yes
+print(Monster.isTerrifying) // => true
+print(Vampire.isTerrifying) // => true (cannot be overridden, even with 'override static var isTerrifying')
+
+// Do subclasses inherit static methods? Yes
+Monster.sayFoobar() // => foobar static method
+Vampire.sayFoobar() // => foobar static method

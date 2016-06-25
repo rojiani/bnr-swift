@@ -11,6 +11,7 @@ import Foundation
 struct Town {
     
     /* Properties */
+    static let region = "South"
     
     // Stored properties
     var population = 5422 {
