@@ -16,12 +16,19 @@ struct Town {
     // Stored properties
     var population = 5422 {
         didSet(oldPopulation) {
-            print("The population has changed to \(population) from \(oldPopulation).")
+            // Bronze Challenge
+            if population < oldPopulation {
+                print("The population has decreased from \(oldPopulation) to \(population).")
+            }
+            // Silver Challenge
+            reportPopulationChangeToMayor(population - oldPopulation)
         }
     }
     
     var numberOfStoplights = 4
     // could also have a constant (let) stored property
+    
+    var mayor: Mayor?
     
     enum Size {
         case small
@@ -79,6 +86,10 @@ struct Town {
     
     mutating func changePopulation(_ amount: Int) {
         population += amount
+    }
+    
+    mutating func reportPopulationChangeToMayor(change: Int) -> () {
+        mayor?.respondToPopulationChange(change)
     }
     
 }

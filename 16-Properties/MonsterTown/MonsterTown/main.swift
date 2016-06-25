@@ -13,6 +13,9 @@ var myTown = Town()
 let ts = myTown.lazyTownSize
 print(ts)
 
+var marionBarry = Mayor()
+myTown.mayor = marionBarry
+
 // computed properties (getter)
 let computedTownSize = myTown.townSize
 
@@ -63,3 +66,8 @@ print(Vampire.isTerrifying) // => true (cannot be overridden, even with 'overrid
 // Do subclasses inherit static methods? Yes
 Monster.sayFoobar() // => foobar static method
 Vampire.sayFoobar() // => foobar static method
+
+
+myTown.changePopulation(10000000)
+
+
