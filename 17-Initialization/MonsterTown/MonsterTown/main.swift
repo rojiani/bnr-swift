@@ -26,7 +26,7 @@ myTown.changePopulation(1000000)
 print("Size: \(myTown.townSize); population: \(myTown.population)")
 
 /* Class - Monster */
-let fredTheZombie = Zombie(town: myTown, monsterName: "Fred")
+let fredTheZombie = Zombie(limp: false, fallingApart: false, town: myTown, monsterName: "Fred")
 fredTheZombie.town = myTown
 fredTheZombie.terrorizeTown()
 fredTheZombie.town?.printTownDescription()

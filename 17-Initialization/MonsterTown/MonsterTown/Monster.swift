@@ -34,6 +34,7 @@ class Monster {
     }
 
     /* Initializers */
+    // Designated Initializer
     init(town: Town?, monsterName: String) {
         self.town = town
         name = monsterName

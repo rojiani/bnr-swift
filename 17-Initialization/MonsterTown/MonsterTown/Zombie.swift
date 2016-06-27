@@ -13,15 +13,22 @@ class Zombie: Monster {
     
     /* Properties */
     // Stored Properties
-    var walksWithLimp = true
+    var walksWithLimp: Bool
     
     // Computed Properties
     // get: internal; set: private
-    private(set) var isFallingApart = false
+    private(set) var isFallingApart: Bool
     
     // Since this does not take any arguments, it is a good candidate for a computed property
     override class var spookyNoise: String {
         return "Brains..."
+    }
+    
+    /* Initializers */
+    init(limp: Bool, fallingApart: Bool, town: Town?, monsterName: String) {
+        walksWithLimp = limp
+        isFallingApart = fallingApart
+        super.init(town: town, monsterName: monsterName)
     }
     
     /* Methods */
