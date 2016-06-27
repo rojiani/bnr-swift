@@ -46,6 +46,11 @@ class Zombie: Monster {
         }
     }
 
+    /* Deinitializer */
+    deinit {
+        print("Zombie named \(name) is no longer with us.")
+    }
+
     /* Methods */
     final override func terrorizeTown() {
         if !isFallingApart {

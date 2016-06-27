@@ -26,11 +26,11 @@ myTown.changePopulation(1000000)
 print("Size: \(myTown.townSize); population: \(myTown.population)")
 
 /* Class - Monster */
-let fredTheZombie = Zombie(limp: false, fallingApart: false, town: myTown, monsterName: "Fred")
-fredTheZombie.town = myTown
-fredTheZombie.terrorizeTown()
-fredTheZombie.town?.printTownDescription()
-fredTheZombie.changeName("Fred the Zombie", walksWithLimp: false)
+var fredTheZombie: Zombie? = Zombie(limp: false, fallingApart: false, town: myTown, monsterName: "Fred")
+fredTheZombie?.town = myTown
+fredTheZombie?.terrorizeTown()
+fredTheZombie?.town?.printTownDescription()
+fredTheZombie?.changeName("Fred the Zombie", walksWithLimp: false)
 
 let convenientZombie = Zombie(limp: true, fallingApart: false)
 
@@ -39,9 +39,9 @@ if Zombie.isTerrifying {
     print("Run away!")
 }
 
-print("Victim pool: \(fredTheZombie.victimPool)")
-fredTheZombie.victimPool = 500      // note the syntax: not fredTheZombie.victimPool(500)
-print("Victim pool: \(fredTheZombie.victimPool)")
+print("Victim pool: \(fredTheZombie?.victimPool)")
+fredTheZombie?.victimPool = 500      // note the syntax: not fredTheZombie.victimPool(500)
+print("Victim pool: \(fredTheZombie?.victimPool)")
 
-
+fredTheZombie = nil // triggers message in deinitializer
 
