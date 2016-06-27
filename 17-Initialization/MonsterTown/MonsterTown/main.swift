@@ -9,6 +9,9 @@
 import Foundation
 
 /* Struct - Town */
+// default initializer
+//var myTown = Town(region: "South", population: 10000, numberOfStoplights: 6)
+// with defined initializer
 var myTown = Town(region: "South", population: 10000, stoplights: 6)
 myTown.printTownDescription()
 

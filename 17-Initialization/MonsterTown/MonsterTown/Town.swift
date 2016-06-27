@@ -9,6 +9,13 @@
 import Foundation
 
 struct Town {
+
+    /* Nested Types */
+    enum Size {
+        case small
+        case medium
+        case large
+    }
     
     /* Properties */
     let region: String
@@ -23,13 +30,7 @@ struct Town {
     }
     
     var numberOfStoplights: Int
-    
-    enum Size {
-        case small
-        case medium
-        case large
-    }
-    
+
     // Computed properties
     var townSize: Size {
         get {
@@ -47,6 +48,8 @@ struct Town {
     }
 
     /* Initializers */
+    // Memberwise initializer
+    // Takes a parameter for each *stored* property (but not computed properties)
     init(region: String, population: Int, stoplights: Int) {
         self.region = region
         self.population = population
