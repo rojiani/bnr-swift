@@ -21,7 +21,7 @@ class Monster {
 
     // Stored Properties
     var town: Town?
-    var name = "Monster"
+    var name: String
     
     // Computed Properties
     var victimPool: Int {
@@ -33,6 +33,11 @@ class Monster {
         }
     }
 
+    /* Initializers */
+    init(town: Town?, monsterName: String) {
+        self.town = town
+        name = monsterName
+    }
     
     /* Methods & Functions */
     
