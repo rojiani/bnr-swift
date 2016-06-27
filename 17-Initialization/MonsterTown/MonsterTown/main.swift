@@ -32,6 +32,8 @@ fredTheZombie.terrorizeTown()
 fredTheZombie.town?.printTownDescription()
 fredTheZombie.changeName("Fred the Zombie", walksWithLimp: false)
 
+let convenientZombie = Zombie(limp: true, fallingApart: false)
+
 print(Zombie.spookyNoise)
 if Zombie.isTerrifying {
     print("Run away!")

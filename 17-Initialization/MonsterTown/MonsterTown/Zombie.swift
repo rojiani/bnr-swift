@@ -10,27 +10,34 @@ import Foundation
 
 // Zombie is a Subclass of Monster
 class Zombie: Monster {
-    
+
     /* Properties */
     // Stored Properties
     var walksWithLimp: Bool
-    
+
     // Computed Properties
     // get: internal; set: private
     private(set) var isFallingApart: Bool
-    
+
     // Since this does not take any arguments, it is a good candidate for a computed property
     override class var spookyNoise: String {
         return "Brains..."
     }
-    
+
     /* Initializers */
     init(limp: Bool, fallingApart: Bool, town: Town?, monsterName: String) {
         walksWithLimp = limp
         isFallingApart = fallingApart
         super.init(town: town, monsterName: monsterName)
     }
-    
+    // Convenience Initializer
+    convenience init(limp: Bool, fallingApart: Bool) {
+        self.init(limp: limp, fallingApart: fallingApart, town: nil, monsterName: "Fred")
+        if walksWithLimp {
+            print("This zombie has a bad knee.")
+        }
+    }
+
     /* Methods */
     final override func terrorizeTown() {
         if !isFallingApart {
@@ -38,11 +45,11 @@ class Zombie: Monster {
         }
         super.terrorizeTown()
     }
-    
+
     func changeName(_ name: String, walksWithLimp: Bool) {
         self.name = name
         self.walksWithLimp = walksWithLimp
     }
 
-    
+
 }
