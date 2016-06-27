@@ -9,10 +9,12 @@
 import Foundation
 
 /* Struct - Town */
-// default initializer
+// using default memberwise initializer (if no initializers explicitly defined)
 //var myTown = Town(region: "South", population: 10000, numberOfStoplights: 6)
 // with defined initializer
-var myTown = Town(region: "South", population: 10000, stoplights: 6)
+//var myTown = Town(region: "South", population: 10000, stoplights: 6)
+// using initializer delegation
+var myTown = Town(population: 10000, stoplights: 6)
 myTown.printTownDescription()
 
 // computed properties (getter)
