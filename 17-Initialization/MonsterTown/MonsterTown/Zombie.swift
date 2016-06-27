@@ -30,6 +30,14 @@ class Zombie: Monster {
         isFallingApart = fallingApart
         super.init(town: town, monsterName: monsterName)
     }
+
+    // must provide required initializer defined in Monster subclass.
+    required init(town: Town?, monsterName: String) {
+        walksWithLimp = false
+        isFallingApart = false
+        super.init(town: town, monsterName: monsterName)
+    }
+
     // Convenience Initializer
     convenience init(limp: Bool, fallingApart: Bool) {
         self.init(limp: limp, fallingApart: fallingApart, town: nil, monsterName: "Fred")

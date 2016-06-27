@@ -9,9 +9,9 @@
 import Foundation
 
 class Monster {
-    
+
     /* Properties */
-    
+
     // Type Properties
     static let isTerrifying = true
 
@@ -22,7 +22,7 @@ class Monster {
     // Stored Properties
     var town: Town?
     var name: String
-    
+
     // Computed Properties
     var victimPool: Int {
         get {
@@ -35,13 +35,14 @@ class Monster {
 
     /* Initializers */
     // Designated Initializer
-    init(town: Town?, monsterName: String) {
+    // 'required' - require all subclasses to provide this initializer
+    required init(town: Town?, monsterName: String) {
         self.town = town
         name = monsterName
     }
-    
+
     /* Methods & Functions */
-    
+
     // Type Functions
     static func sayFoobar() { print("foobar static method") }
 
