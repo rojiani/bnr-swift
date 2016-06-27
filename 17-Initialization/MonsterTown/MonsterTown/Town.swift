@@ -48,12 +48,18 @@ struct Town {
     }
 
     /* Initializers */
-    // Memberwise initializer
     // Takes a parameter for each *stored* property (but not computed properties)
+    // Functionally equivalent to the default memberwise initializer that would be 
+    // automatically provided if no initializers defined here
     init(region: String, population: Int, stoplights: Int) {
         self.region = region
         self.population = population
         numberOfStoplights = stoplights
+    }
+    
+    // using initializer delegation
+    init(population: Int, stoplights: Int) {
+        self.init(region: "N/A", population: population, stoplights: stoplights)
     }
     
     /* Methods */
