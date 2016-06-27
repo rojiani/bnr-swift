@@ -11,10 +11,10 @@ import Foundation
 struct Town {
     
     /* Properties */
-    static let region = "South"
+    let region: String
     
     // Stored properties
-    var population = 5422 {
+    var population: Int {
         didSet(oldPopulation) {
             if population < oldPopulation {
                 print("The population has decreased from \(oldPopulation) to \(population).")
@@ -22,8 +22,7 @@ struct Town {
         }
     }
     
-    var numberOfStoplights = 4
-    // could also have a constant (let) stored property
+    var numberOfStoplights: Int
     
     enum Size {
         case small
@@ -31,35 +30,7 @@ struct Town {
         case large
     }
     
-    // Iniitalizers
-    // for Struct, don't need to declare memberwise initializer:
-    // in main.swift, can still call Town(population: 10000, numberOfStoplights: 6)
-    
-    
-    // lazy initialized stored property
-    // IIFE - called when townSize is referenced
-    // the () along with 'lazy' marking ensure that Swift will call the
-    // closure & assign the result it returns to townSize when the property is acessed for 
-    // the first time
-    // A closure (& lazy) works well here since the value of the town's population is needed
-    // in order to determine the town's size
-    // Must be lazy - 'self' unresolved if not
-    lazy var lazyTownSize: Size = {
-        switch self.population {
-        case 0...10000:
-            return Size.small
-        
-        case 10001...100000:
-            return Size.medium
-        
-        default:
-            return Size.large
-        }
-    }()
-    
     // Computed properties
-    // a read-only computed property (no setter)
-    // note: if no setter, can leave out get { ... }
     var townSize: Size {
         get {
             switch self.population {
@@ -75,11 +46,20 @@ struct Town {
         }
     }
 
-    // Methods
+    /* Initializers */
+    init(region: String, population: Int, stoplights: Int) {
+        self.region = region
+        self.population = population
+        numberOfStoplights = stoplights
+    }
+    
+    /* Methods */
     func printTownDescription() {
         print("Population: \(population);" +
               "\n" +
-              "Number of Stoplights: \(numberOfStoplights)")
+              "Number of Stoplights: \(numberOfStoplights)" +
+              "\n" +
+              "Region: \(region)")
     }
     
     mutating func changePopulation(_ amount: Int) {

@@ -10,8 +10,12 @@ import Foundation
 
 class Vampire : Monster {
     
+    /* Properties */
+    
+    // Type Properties
     static var vampireThralls = [Vampire]()
     
+    // Methods
     override func terrorizeTown() {
         if (town?.population > 1) {
             town?.changePopulation(-1)
