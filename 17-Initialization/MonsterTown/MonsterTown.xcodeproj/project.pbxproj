@@ -12,7 +12,6 @@
 		105B7D291D17926A0049BAC2 /* Zombie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105B7D281D17926A0049BAC2 /* Zombie.swift */; };
 		10770DEC1D17BDF200CB52D2 /* Vampire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10770DEB1D17BDF200CB52D2 /* Vampire.swift */; };
 		10A5F96F1D0FBC8B00CE6C43 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A5F96E1D0FBC8B00CE6C43 /* main.swift */; };
-		10F5C30C1D1E524B00CDE7D4 /* Mayor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F5C30B1D1E524B00CDE7D4 /* Mayor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,7 +33,6 @@
 		10770DEB1D17BDF200CB52D2 /* Vampire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vampire.swift; sourceTree = "<group>"; };
 		10A5F96B1D0FBC8B00CE6C43 /* MonsterTown */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MonsterTown; sourceTree = BUILT_PRODUCTS_DIR; };
 		10A5F96E1D0FBC8B00CE6C43 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		10F5C30B1D1E524B00CDE7D4 /* Mayor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mayor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +67,6 @@
 			children = (
 				10A5F96E1D0FBC8B00CE6C43 /* main.swift */,
 				105B7D241D178E0A0049BAC2 /* Town.swift */,
-				10F5C30B1D1E524B00CDE7D4 /* Mayor.swift */,
 				105B7D261D1790020049BAC2 /* Monster.swift */,
 				105B7D281D17926A0049BAC2 /* Zombie.swift */,
 				10770DEB1D17BDF200CB52D2 /* Vampire.swift */,
@@ -137,7 +134,6 @@
 			files = (
 				10A5F96F1D0FBC8B00CE6C43 /* main.swift in Sources */,
 				105B7D291D17926A0049BAC2 /* Zombie.swift in Sources */,
-				10F5C30C1D1E524B00CDE7D4 /* Mayor.swift in Sources */,
 				105B7D271D1790020049BAC2 /* Monster.swift in Sources */,
 				10770DEC1D17BDF200CB52D2 /* Vampire.swift in Sources */,
 				105B7D251D178E0A0049BAC2 /* Town.swift in Sources */,

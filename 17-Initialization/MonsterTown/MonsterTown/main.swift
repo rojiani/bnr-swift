@@ -9,12 +9,11 @@
 import Foundation
 
 /* Struct - Town */
+//var myTown = Town(population: 10000, numberOfStoplights: 6)
 var myTown = Town()
+myTown.printTownDescription()
 let ts = myTown.lazyTownSize
 print(ts)
-
-var marionBarry = Mayor()
-myTown.mayor = marionBarry
 
 // computed properties (getter)
 let computedTownSize = myTown.townSize

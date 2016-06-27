@@ -16,25 +16,25 @@ struct Town {
     // Stored properties
     var population = 5422 {
         didSet(oldPopulation) {
-            // Bronze Challenge
             if population < oldPopulation {
                 print("The population has decreased from \(oldPopulation) to \(population).")
             }
-            // Silver Challenge
-            reportPopulationChangeToMayor(population - oldPopulation)
         }
     }
     
     var numberOfStoplights = 4
     // could also have a constant (let) stored property
     
-    var mayor: Mayor?
-    
     enum Size {
         case small
         case medium
         case large
     }
+    
+    // Iniitalizers
+    // for Struct, don't need to declare memberwise initializer:
+    // in main.swift, can still call Town(population: 10000, numberOfStoplights: 6)
+    
     
     // lazy initialized stored property
     // IIFE - called when townSize is referenced
@@ -74,9 +74,7 @@ struct Town {
             }
         }
     }
-    
-    
-    
+
     // Methods
     func printTownDescription() {
         print("Population: \(population);" +
@@ -86,10 +84,6 @@ struct Town {
     
     mutating func changePopulation(_ amount: Int) {
         population += amount
-    }
-    
-    mutating func reportPopulationChangeToMayor(change: Int) -> () {
-        mayor?.respondToPopulationChange(change)
     }
     
 }
