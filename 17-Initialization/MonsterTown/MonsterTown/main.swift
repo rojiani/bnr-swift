@@ -15,15 +15,15 @@ import Foundation
 //var myTown = Town(region: "South", population: 10000, stoplights: 6)
 // using initializer delegation
 var myTown = Town(population: 10000, stoplights: 6)
-myTown.printTownDescription()
+myTown?.printTownDescription()
 
 // computed properties (getter)
-let computedTownSize = myTown.townSize
+let ts = myTown?.townSize
 
-myTown.changePopulation(1000000)
+myTown?.changePopulation(1000000)
 
 // computed property will reflect change
-print("Size: \(myTown.townSize); population: \(myTown.population)")
+print("Size: \(myTown?.townSize); population: \(myTown?.population)")
 
 /* Class - Monster */
 var fredTheZombie: Zombie? = Zombie(limp: false, fallingApart: false, town: myTown, monsterName: "Fred")
