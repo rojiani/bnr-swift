@@ -21,7 +21,7 @@ class Monster {
 
     // Stored Properties
     var town: Town?
-    var name: String
+    var name: String!
 
     // Computed Properties
     var victimPool: Int {
@@ -36,7 +36,11 @@ class Monster {
     /* Initializers */
     // Designated Initializer
     // 'required' - require all subclasses to provide this initializer
-    required init(town: Town?, monsterName: String) {
+    required init?(town: Town?, monsterName: String) {
+        if monsterName == "" {
+            self.name = nil
+            return nil
+        }
         self.town = town
         name = monsterName
     }

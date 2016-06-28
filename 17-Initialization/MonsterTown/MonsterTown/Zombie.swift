@@ -26,7 +26,7 @@ class Zombie: Monster {
 
     /* Initializers */
     // Designated initializer
-    init(limp: Bool, fallingApart: Bool, town: Town?, monsterName: String) {
+    init?(limp: Bool, fallingApart: Bool, town: Town?, monsterName: String) {
         walksWithLimp = limp
         isFallingApart = fallingApart
         super.init(town: town, monsterName: monsterName)
@@ -34,12 +34,12 @@ class Zombie: Monster {
 
     // must provide required initializer defined in Monster subclass.
     // Bronze challenge - make this a convenience initializer
-    convenience required init(town: Town?, monsterName: String) {
+    convenience required init?(town: Town?, monsterName: String) {
         self.init(limp: false, fallingApart: false, town: town, monsterName: monsterName)
     }
 
     // Convenience Initializer
-    convenience init(limp: Bool, fallingApart: Bool) {
+    convenience init?(limp: Bool, fallingApart: Bool) {
         self.init(limp: limp, fallingApart: fallingApart, town: nil, monsterName: "Fred")
         if walksWithLimp {
             print("This zombie has a bad knee.")
