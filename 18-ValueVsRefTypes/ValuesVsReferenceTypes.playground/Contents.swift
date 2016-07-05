@@ -1,4 +1,6 @@
-import Foundation.NSDate
+//: Playground - noun: a place where people can play
+
+import UIKit
 
 
 class GreekGod {
@@ -28,21 +30,4 @@ let greekPantheon = pantheon
 print(greekPantheon.chiefGod.name)
 print(greekPantheon.dateCreated)
 
-let zeus = GreekGod(name: "Zeus")
 let athena = GreekGod(name: "Athena")
-let gods = [athena, hecate, zeus]
-let godsCopy = gods
-gods.last?.name = "Jupiter"
-
-print("gods:")
-for god in gods {
-    print(god.name)
-}
-
-print("godsCopy:")
-for god in godsCopy {
-    print(god.name)
-}
-
-
-
