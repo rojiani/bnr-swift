@@ -1,8 +1,6 @@
-//: Playground - noun: a place where people can play
-
 import Cocoa
 
-struct Stack<Element> {
+struct Stack<Element>: SequenceType {
     var items = [Element]()
     
     mutating func push(newItem: Element) {
@@ -23,13 +21,62 @@ struct Stack<Element> {
         }
         return Stack<U>(items: mappedItems)
     }
+    
+    // MARK: SequenceType Protocol Conformance
+    func generate() -> StackGenerator<Element> {
+        return StackGenerator(stack: self)
+    }
 }
+
+struct StackGenerator<T>: GeneratorType {
+    var stack: Stack<T>
+    
+    mutating func next() -> T? {
+        return stack.pop()
+    }
+}
+
+func pushItemsOntoStack<Element, S: SequenceType where S.Generator.Element == Element>
+        (inout stack: Stack<Element>, fromSequence sequence: S) {
+    for item in sequence {
+        stack.push(item)
+    }
+}
+
+var myStack = Stack<Int>()
+myStack.push(10)
+myStack.push(20)
+myStack.push(30)
+
+var myStackGenerator = StackGenerator(stack: myStack)
+while let value = myStackGenerator.next() {
+    print("got \(value)")
+}
+
+for value in myStack {
+    print("for-in loop: got \(value)")
+}
+
+pushItemsOntoStack(&myStack, fromSequence: [1, 2, 3])
+for value in myStack {
+    print("after pushing from sequence: got \(value)")
+}
+
+var myOtherStack = Stack<Int>()
+pushItemsOntoStack(&myOtherStack, fromSequence: [1, 2, 3])
+pushItemsOntoStack(&myStack, fromSequence: myOtherStack)
+for value in myStack {
+    print("after pushing items onto stack: got \(value)")
+}
+
 
 var intStack = Stack<Int>()
 intStack.push(1)
 intStack.push(2)
 var doubledStack = intStack.map { 2 * $0 }
 print(doubledStack)
+
+
 
 print(intStack.pop())       // => Optional(2)
 print(intStack.pop())       // => Optional(1)
