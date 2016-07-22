@@ -59,7 +59,7 @@ class ViewController: NSViewController {
 
 }
 
-// MARK: Button & Progress Indicators
+// MARK: Buttons & Progress Indicator
 extension ViewController {
 
     private func setInititalButtonAndIndicatorStates() {
@@ -82,6 +82,7 @@ extension ViewController {
 
     private func setProgressIndicatorAppearance() {
         progressIndicator.style = NSProgressIndicatorStyle.SpinningStyle
+        progressIndicator.indeterminate = false
         progressIndicator.displayedWhenStopped = false
         progressIndicator.bezeled = false
     }
