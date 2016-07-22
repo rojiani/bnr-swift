@@ -704,10 +704,10 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <size key="minSize" width="463" height="207"/>
-                                            <size key="maxSize" width="468" height="10000000"/>
+                                            <size key="maxSize" width="480" height="10000000"/>
                                             <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <size key="minSize" width="463" height="207"/>
-                                            <size key="maxSize" width="468" height="10000000"/>
+                                            <size key="maxSize" width="480" height="10000000"/>
                                         </textView>
                                     </subviews>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -721,9 +721,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" maxValue="100" bezeled="NO" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="Lhg-hl-qEI">
+                                <rect key="frame" x="411" y="223" width="32" height="32"/>
+                            </progressIndicator>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="fFJ-LH-MM8" secondAttribute="trailing" constant="20" id="4sh-dO-hKk"/>
+                            <constraint firstItem="Lhg-hl-qEI" firstAttribute="centerY" secondItem="fFJ-LH-MM8" secondAttribute="centerY" id="A0X-b2-pH7"/>
                             <constraint firstItem="TMv-Hb-OBO" firstAttribute="baseline" secondItem="fFJ-LH-MM8" secondAttribute="baseline" id="D34-16-bnZ"/>
                             <constraint firstItem="0Ta-tB-ZXe" firstAttribute="leading" secondItem="ERx-hH-rdd" secondAttribute="leading" id="RRU-8c-aXf"/>
                             <constraint firstAttribute="bottom" secondItem="0Ta-tB-ZXe" secondAttribute="bottom" id="YKX-jk-GJm"/>
@@ -734,6 +738,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="progressIndicator" destination="Lhg-hl-qEI" id="579-Ph-Iuf"/>
+                        <outlet property="speakButton" destination="fFJ-LH-MM8" id="EfL-lV-Eu6"/>
+                        <outlet property="stopButton" destination="TMv-Hb-OBO" id="cvt-HS-nkf"/>
                         <outlet property="textView" destination="cb5-BB-egt" id="uQK-6Q-8Gh"/>
                     </connections>
                 </viewController>
