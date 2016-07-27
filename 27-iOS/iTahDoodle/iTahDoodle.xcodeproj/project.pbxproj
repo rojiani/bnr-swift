@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10A7F03F1D4897B0005D24FA /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A7F03E1D4897B0005D24FA /* TodoList.swift */; };
 		10CDDFAC1D488BE0005B8B66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CDDFAB1D488BE0005B8B66 /* AppDelegate.swift */; };
 		10CDDFAE1D488BE0005B8B66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CDDFAD1D488BE0005B8B66 /* ViewController.swift */; };
 		10CDDFB11D488BE0005B8B66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10CDDFAF1D488BE0005B8B66 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10A7F03E1D4897B0005D24FA /* TodoList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
 		10CDDFA81D488BE0005B8B66 /* iTahDoodle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTahDoodle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10CDDFAB1D488BE0005B8B66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10CDDFAD1D488BE0005B8B66 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			children = (
 				10CDDFAB1D488BE0005B8B66 /* AppDelegate.swift */,
 				10CDDFAD1D488BE0005B8B66 /* ViewController.swift */,
+				10A7F03E1D4897B0005D24FA /* TodoList.swift */,
 				10CDDFAF1D488BE0005B8B66 /* Main.storyboard */,
 				10CDDFB21D488BE0005B8B66 /* Assets.xcassets */,
 				10CDDFB41D488BE0005B8B66 /* LaunchScreen.storyboard */,
@@ -136,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10A7F03F1D4897B0005D24FA /* TodoList.swift in Sources */,
 				10CDDFAE1D488BE0005B8B66 /* ViewController.swift in Sources */,
 				10CDDFAC1D488BE0005B8B66 /* AppDelegate.swift in Sources */,
 			);
@@ -293,6 +297,7 @@
 				10CDDFBC1D488BE0005B8B66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
