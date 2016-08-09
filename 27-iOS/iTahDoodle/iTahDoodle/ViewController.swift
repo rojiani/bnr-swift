@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         // with the identifier "Cell”
         // specifically, it registers the class UITableViewCell, which tells the table view to
         // create instances of UITableViewCell
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.register(todoList.getCellClass, forCellReuseIdentifier: todoList.getCellIdentifier)
         // tells the table view that the todoList is its data source
         tableView.dataSource = todoList
     }
@@ -33,8 +33,8 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func addButtonPressed(sender: UIButton) {
-        guard let text = itemTextField.text else {
+    @IBAction func addButtonPressed(_ sender: UIButton) {
+        guard let text = itemTextField.text where text != "" else {
             return
         }
         todoList.addItem(text)

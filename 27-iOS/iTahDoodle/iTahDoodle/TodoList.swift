@@ -11,11 +11,11 @@ import UIKit
 class TodoList: NSObject {
 
     // computed property that gets the location where the file can be saved. Computed by a closure (IIFE)
-    private let fileURL: NSURL = {
-        let documentDirectoryURLs = NSFileManager.defaultManager()
-                                                 .URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+    private let fileURL: URL = {
+        let documentDirectoryURLs = FileManager.default().urlsForDirectory(.documentDirectory,
+                                                                           inDomains: .userDomainMask)
         let documentDirectoryURL = documentDirectoryURLs.first!
-        return documentDirectoryURL.URLByAppendingPathComponent("todolist.items")
+        return try! documentDirectoryURL.appendingPathComponent("todolist.items")
     }()
 
     private var items: [String] = []
@@ -27,7 +27,6 @@ class TodoList: NSObject {
     }
 
 
-
     /**
      Save the to-do list to a file.
      */
@@ -35,7 +34,7 @@ class TodoList: NSObject {
         let itemsArray = items as NSArray
 
         print("Saving items to \(fileURL)")
-        if !itemsArray.writeToURL(fileURL, atomically: true) {
+        if !itemsArray.write(to: fileURL, atomically: true) {
             print("Could not save to-do list")
         }
     }
@@ -45,7 +44,7 @@ class TodoList: NSObject {
      */
     func loadItems() {
         // Convert from NSArray to Swift array
-        if let itemsArray = NSArray(contentsOfURL: fileURL) as? [String] {
+        if let itemsArray = NSArray(contentsOf: fileURL) as? [String] {
             items = itemsArray
         }
     }
@@ -56,7 +55,7 @@ class TodoList: NSObject {
      - parameters:
         - item: to-do item
      */
-    func addItem(item: String) {
+    func addItem(_ item: String) {
         items.append(item)
         saveItems()
     }
@@ -67,13 +66,23 @@ class TodoList: NSObject {
 
 extension TodoList: UITableViewDataSource {
 
-    func tableView(tableView: UITableView,
-                   cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    // Silver Challenge
+    var getCellClass: AnyClass {
+        return UITableViewCell.self
+    }
+
+    var getCellIdentifier: String {
+        return "Cell"
+    }
+
+
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         // Dequeue a reusable cell with the id "Cell" & the given IndexPath
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        let item = items[indexPath.row]
+        let item = items[(indexPath as NSIndexPath).row]
 
         // force unwrap textLabel: not all UITableViewCells are guaranteed to have a textLabel, but
         // the one you are using does
@@ -82,7 +91,7 @@ extension TodoList: UITableViewDataSource {
         return cell
     }
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // one row for each to-do item
         return items.count
     }
