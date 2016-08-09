@@ -30,6 +30,9 @@
                                 <state key="normal" title="Remove">
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="removeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N77-eQ-XlX"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o0U-Hn-0dP">
                                 <state key="normal" title="Insert"/>
@@ -41,14 +44,14 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="RZB-Xb-Z3M" firstAttribute="top" secondItem="jbi-Yb-3eV" secondAttribute="bottom" constant="14" id="0IG-wD-NwB"/>
-                            <constraint firstItem="oLm-lQ-lBN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="3WN-a3-Ahx"/>
                             <constraint firstItem="oLm-lQ-lBN" firstAttribute="centerY" secondItem="o0U-Hn-0dP" secondAttribute="centerY" id="3zY-2J-8fD"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="RZB-Xb-Z3M" secondAttribute="bottom" constant="20" id="4yT-WT-s7y"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="RZB-Xb-Z3M" secondAttribute="bottom" constant="20" id="6Ua-n6-1TM"/>
                             <constraint firstAttribute="leadingMargin" secondItem="RZB-Xb-Z3M" secondAttribute="leading" id="76c-RL-gv7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="oLm-lQ-lBN" secondAttribute="trailing" id="7z2-Qq-ADg"/>
                             <constraint firstAttribute="leadingMargin" secondItem="jbi-Yb-3eV" secondAttribute="leading" id="IDG-kG-ktX"/>
-                            <constraint firstItem="o0U-Hn-0dP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="VQ9-nk-Igz"/>
+                            <constraint firstItem="o0U-Hn-0dP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="TV6-Us-s4y"/>
                             <constraint firstItem="o0U-Hn-0dP" firstAttribute="centerY" secondItem="oLm-lQ-lBN" secondAttribute="centerY" id="Ye7-V7-MiO"/>
+                            <constraint firstItem="oLm-lQ-lBN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="avp-PK-M5n"/>
                             <constraint firstItem="jbi-Yb-3eV" firstAttribute="baseline" secondItem="o0U-Hn-0dP" secondAttribute="baseline" id="ebU-hm-jZo"/>
                             <constraint firstItem="o0U-Hn-0dP" firstAttribute="leading" secondItem="jbi-Yb-3eV" secondAttribute="trailing" constant="8" id="enW-XL-bZK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RZB-Xb-Z3M" secondAttribute="trailing" id="hRV-fL-xJ4"/>
