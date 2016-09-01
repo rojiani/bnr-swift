@@ -10,6 +10,9 @@ import UIKit
 
 class NewContactViewController: UIViewController {
 
+    @IBOutlet var firstNameTextField: UITextField!
+    @IBOutlet var lastNameTextField: UITextField!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,7 +23,7 @@ class NewContactViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
 
     /*
     // MARK: - Navigation

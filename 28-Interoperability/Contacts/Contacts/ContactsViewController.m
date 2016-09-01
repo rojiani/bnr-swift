@@ -64,4 +64,22 @@
     return cell;
 }
 
+- (IBAction)cancelToContactsViewController:(UIStoryboardSegue *)segue
+{
+    // No action to take if user cancels
+}
+
+- (IBAction)createNewContact:(UIStoryboardSegue *)segue
+{
+    NewContactViewController *newContactVC = segue.sourceViewController;
+    NSString *firstName = newContactVC.firstNameTextField.text;
+    NSString *lastName = newContactVC.lastNameTextField.text;
+    if (firstName.length != 0 || lastName.length != 0) {
+        NSString *contactName = [NSString stringWithFormat:@"%@ %@", firstName, lastName];
+        Contact *newContact = [[Contact alloc] initWithContactName:contactName];
+        [self.contacts addObject:newContact];
+        [self.tableView reloadData];
+    }
+}
+
 @end
