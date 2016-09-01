@@ -74,6 +74,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qf3-XJ-SRM">
+                                <rect key="frame" x="180" y="236" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="vPf-AA-zaV"/>
+                                    <constraint firstAttribute="width" constant="240" id="veD-VG-n6t"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kA7-tG-Uu5">
                                 <rect key="frame" x="15" y="99" width="88" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -82,6 +89,10 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Qf3-XJ-SRM" firstAttribute="centerY" secondItem="FFo-Oo-GxR" secondAttribute="centerY" id="TDb-hx-40x"/>
+                            <constraint firstItem="Qf3-XJ-SRM" firstAttribute="centerX" secondItem="FFo-Oo-GxR" secondAttribute="centerX" id="Vig-Hd-Dc9"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Contact" id="EH2-85-F1x">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="iF9-kE-gz8">
@@ -96,6 +107,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="contactImageView" destination="Qf3-XJ-SRM" id="h0v-Ig-dJC"/>
                         <outlet property="firstNameTextField" destination="K6a-J9-0tO" id="s9I-ac-46R"/>
                         <outlet property="lastNameTextField" destination="HhA-Cc-xGU" id="bvI-7G-r5F"/>
                     </connections>

@@ -13,10 +13,13 @@ class NewContactViewController: UIViewController {
     @IBOutlet var firstNameTextField: UITextField!
     @IBOutlet var lastNameTextField: UITextField!
 
+    @IBOutlet var contactImageView: UIImageView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Generate default smiley face image.
+        contactImageView.image = DefaultImage.generateDefaultImageOfSize(contactImageView.frame.size)
     }
 
     override func didReceiveMemoryWarning() {
