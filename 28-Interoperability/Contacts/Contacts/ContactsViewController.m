@@ -15,6 +15,7 @@
 @interface ContactsViewController ()
 
 @property (nonatomic, readonly, strong) NSMutableArray *contacts;
+@property (nonatomic, weak) Contact *contact;
 
 @end
 
@@ -64,11 +65,42 @@
     return cell;
 }
 
-- (IBAction)cancelToContactsViewController:(UIStoryboardSegue *)segue
+// MARK: Existing Contact Detail
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // No action to take if user cancels
+    if ([segue.identifier isEqualToString: @"toExistingContactVC"]) {
+        UINavigationController *nav = (UINavigationController *)segue.destinationViewController;
+        ExistingContactViewController *controller = (ExistingContactViewController*) nav.topViewController;
+        controller.contact = self.contact;
+    }
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    self.contact = self.contacts[indexPath.row];
+    
+    NSLog(@"Selected contact with name: %@", self.contact.name);
+    
+    [self performSegueWithIdentifier:@"toExistingContactVC"
+                              sender:self];
+}
+
+
+- (IBAction)updateExistingContact:(UIStoryboardSegue *)segue {
+    ExistingContactViewController *existingContactVC = segue.sourceViewController;
+    NSString *firstName = existingContactVC.firstNameTextField.text;
+    NSString *lastName = existingContactVC.lastNameTextField.text;
+    if (firstName.length != 0 || lastName.length != 0) {
+        Contact *existingContact = existingContactVC.contact;
+        NSString *updatedContactName = [NSString stringWithFormat:@"%@ %@", firstName, lastName];
+        Contact *updatedExistingContact = [[Contact alloc] initWithContactName:updatedContactName];
+        [self.contacts removeObjectIdenticalTo:existingContact];
+        [self.contacts addObject:updatedExistingContact];
+        [self.tableView reloadData];
+    }
+}
+
+
+// MARK: Add New Contact
 - (IBAction)createNewContact:(UIStoryboardSegue *)segue
 {
     NewContactViewController *newContactVC = segue.sourceViewController;
@@ -81,5 +113,12 @@
         [self.tableView reloadData];
     }
 }
+
+- (IBAction)cancelToContactsViewController:(UIStoryboardSegue *)segue
+{
+    // No action to take if user cancels
+}
+
+
 
 @end

@@ -17,6 +17,7 @@
 		10CB75391D71642B00FD3C07 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB75381D71642B00FD3C07 /* Contact.swift */; };
 		10CB753B1D71652B00FD3C07 /* NewContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB753A1D71652B00FD3C07 /* NewContactViewController.swift */; };
 		10D249471D77EB9B00A7F531 /* DefaultImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D249461D77EB9B00A7F531 /* DefaultImage.m */; };
+		10D249491D77FA8200A7F531 /* ExistingContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D249481D77FA8200A7F531 /* ExistingContactViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		10CB753A1D71652B00FD3C07 /* NewContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewContactViewController.swift; sourceTree = "<group>"; };
 		10D249451D77EB9B00A7F531 /* DefaultImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultImage.h; sourceTree = "<group>"; };
 		10D249461D77EB9B00A7F531 /* DefaultImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultImage.m; sourceTree = "<group>"; };
+		10D249481D77FA8200A7F531 /* ExistingContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExistingContactViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				105EC7C21D6FFE5E00982253 /* AppDelegate.m */,
 				105EC7C41D6FFE5E00982253 /* ContactsViewController.h */,
 				105EC7C51D6FFE5E00982253 /* ContactsViewController.m */,
+				10D249481D77FA8200A7F531 /* ExistingContactViewController.swift */,
 				10CB753A1D71652B00FD3C07 /* NewContactViewController.swift */,
 				105EC7C71D6FFE5E00982253 /* Main.storyboard */,
 				10D249451D77EB9B00A7F531 /* DefaultImage.h */,
@@ -229,6 +232,7 @@
 				10CB75391D71642B00FD3C07 /* Contact.swift in Sources */,
 				10CB753B1D71652B00FD3C07 /* NewContactViewController.swift in Sources */,
 				105EC7C61D6FFE5E00982253 /* ContactsViewController.m in Sources */,
+				10D249491D77FA8200A7F531 /* ExistingContactViewController.swift in Sources */,
 				105EC7C31D6FFE5E00982253 /* AppDelegate.m in Sources */,
 				105EC7C01D6FFE5E00982253 /* main.m in Sources */,
 				10D249471D77EB9B00A7F531 /* DefaultImage.m in Sources */,

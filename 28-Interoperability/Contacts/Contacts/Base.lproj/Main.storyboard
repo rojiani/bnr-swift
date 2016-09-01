@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Contacts-->
@@ -25,15 +26,17 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="GIy-M0-kcb" kind="show" identifier="toExistingContactVC" id="8Lp-Sa-Cxv"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tPk-aI-wWb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="462" y="-559"/>
+            <point key="canvasLocation" x="528" y="-1769"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="h56-tS-BXN">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="P8E-sG-o4C" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="drP-nu-VTe" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3pW-IG-f2V">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -43,10 +46,11 @@
                         <segue destination="hfl-yJ-BBF" kind="relationship" relationship="rootViewController" id="SbT-Oj-6Qe"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P8E-sG-o4C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="462" y="185"/>
+            <point key="canvasLocation" x="1188" y="-1769"/>
         </scene>
-        <!--Contact-->
+        <!--New Contact-->
         <scene sceneID="FHu-Zy-S28">
             <objects>
                 <viewController id="hfl-yJ-BBF" customClass="NewContactViewController" customModule="Contacts" customModuleProvider="target" sceneMemberID="viewController">
@@ -94,7 +98,7 @@
                             <constraint firstItem="Qf3-XJ-SRM" firstAttribute="centerX" secondItem="FFo-Oo-GxR" secondAttribute="centerX" id="Vig-Hd-Dc9"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Contact" id="EH2-85-F1x">
+                    <navigationItem key="navigationItem" title="New Contact" id="EH2-85-F1x">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="iF9-kE-gz8">
                             <connections>
                                 <segue destination="FAo-Fq-4XN" kind="unwind" unwindAction="cancelToContactsViewController:" id="kOs-LC-ekj"/>
@@ -115,7 +119,109 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rEx-XO-04c" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="FAo-Fq-4XN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1189" y="185"/>
+            <point key="canvasLocation" x="1871" y="-1769"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6ne-j8-30Y">
+            <objects>
+                <navigationController id="GIy-M0-kcb" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KKo-e2-4hK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Zuk-gz-Kwv" kind="relationship" relationship="rootViewController" id="xgK-JA-TPg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2H6-yI-nTo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1188" y="-994"/>
+        </scene>
+        <!--Contact-->
+        <scene sceneID="GJe-4g-YIH">
+            <objects>
+                <viewController id="Zuk-gz-Kwv" customClass="ExistingContactViewController" customModule="Contacts" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LG3-Vb-zJt"/>
+                        <viewControllerLayoutGuide type="bottom" id="EfC-UR-1tk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="W5X-u8-mp7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="First Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4O4-nE-apx">
+                                <rect key="frame" x="20" y="172" width="88" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Contact Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcP-wH-Rjy">
+                                <rect key="frame" x="245" y="90" width="111" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Last Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyL-pj-CMJ">
+                                <rect key="frame" x="20" y="220" width="87" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IYZ-ko-AyM">
+                                <rect key="frame" x="129" y="168" width="240" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="4JK-RF-eR9"/>
+                                    <constraint firstAttribute="width" constant="240" id="FhO-Ug-AKA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QfI-GA-tam">
+                                <rect key="frame" x="129" y="216" width="240" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="gjG-S8-jUy"/>
+                                    <constraint firstAttribute="width" constant="240" id="qDt-Vf-hGt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4O4-nE-apx" firstAttribute="leading" secondItem="hyL-pj-CMJ" secondAttribute="leading" id="0oP-tl-36f"/>
+                            <constraint firstItem="bcP-wH-Rjy" firstAttribute="centerX" secondItem="W5X-u8-mp7" secondAttribute="centerX" id="Hgk-qN-Isr"/>
+                            <constraint firstItem="IYZ-ko-AyM" firstAttribute="leading" secondItem="QfI-GA-tam" secondAttribute="leading" id="fiH-cF-8WJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Contact" id="Nzh-fj-Tae">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="tIm-BO-9fP"/>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Edit" id="Lju-EO-yPN">
+                                <connections>
+                                    <action selector="editButtonPressed" destination="Zuk-gz-Kwv" id="RmZ-6p-Yut"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Save" id="WkE-V0-zuO">
+                                <connections>
+                                    <segue destination="uCK-fi-DwM" kind="unwind" unwindAction="updateExistingContact:" id="v8a-hX-tZE"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="editButton" destination="Lju-EO-yPN" id="2gn-Ev-JrM"/>
+                        <outlet property="firstNameLabel" destination="4O4-nE-apx" id="gsF-JO-0eE"/>
+                        <outlet property="firstNameTextField" destination="IYZ-ko-AyM" id="OUV-Es-CYx"/>
+                        <outlet property="lastNameLabel" destination="hyL-pj-CMJ" id="3nP-ao-KeM"/>
+                        <outlet property="lastNameTextField" destination="QfI-GA-tam" id="wC2-pd-J9O"/>
+                        <outlet property="name" destination="bcP-wH-Rjy" id="eKO-zA-e9G"/>
+                        <outlet property="saveButton" destination="WkE-V0-zuO" id="oSI-Mz-bRv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hj0-tC-3tE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="uCK-fi-DwM" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1852" y="-994"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Jv3-G5-9vJ">
@@ -131,7 +237,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1LN-Mc-9gV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-259" y="-559"/>
+            <point key="canvasLocation" x="-159" y="-1769"/>
         </scene>
     </scenes>
 </document>
